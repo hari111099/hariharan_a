@@ -19,7 +19,7 @@ export default function ExperienceSection() {
   };
 
   return (
-    <section id="experience" className="relative bg-bg-primary py-24 sm:py-32 transition-colors duration-300">
+    <section id="experience" className="relative bg-bg-primary py-24 sm:py-32 transition-colors duration-300 overflow-hidden">
       <div className="absolute inset-0 gradient-mesh" />
       <div className="relative mx-auto max-w-5xl px-6">
         <SectionHeading title="Experience" subtitle="My professional journey and key contributions" />

@@ -5,8 +5,8 @@ export const personalInfo = {
   location: "Chennai, India",
   email: "hariharanoutlooks@gmail.com",
   phone: "+91 97892 76074",
-  linkedin: "https://linkedin.com/in/hariharan-arumugam-b27572195",
-  github: "https://github.com",
+  linkedin: "https://github.com/hari111099",
+  github: "https://github.com/hari111099",
   resumeUrl: "/resume/Hariharan_Arumugam_Resume_2026.pdf",
   summary:
     "Application Support Engineer with 5+ years of hands-on experience in L1/L2 production support, incident management, and enterprise application maintenance within large-scale IT environments. Proven track record of transitioning 16+ applications with zero downtime, resolving 100+ monthly tickets, and driving measurable improvements in SLA compliance, security posture, and operational efficiency.",

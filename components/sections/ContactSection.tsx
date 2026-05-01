@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 import { fadeUp, staggerContainer, scaleIn } from "@/components/animations/variants";
@@ -18,8 +18,13 @@ const contactCards = [
 ];
 
 export default function ContactSection() {
+  const [mounted, setMounted] = useState(false);
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +34,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative bg-bg-secondary py-24 sm:py-32 transition-colors duration-300">
+    <section id="contact" className="relative bg-bg-secondary py-24 sm:py-32 transition-colors duration-300 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 dark:via-indigo-800 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -62,22 +67,22 @@ export default function ContactSection() {
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="contact-name" className="mb-2 block text-xs font-medium text-slate-500 uppercase tracking-wider">Name</label>
-                <input id="contact-name" type="text" required value={formState.name} onChange={(e) => setFormState({ ...formState, name: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="Your name" />
+                <input id="contact-name" type="text" required value={formState.name} onChange={(e) => setFormState({ ...formState, name: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="Your name" suppressHydrationWarning />
               </div>
               <div>
                 <label htmlFor="contact-email" className="mb-2 block text-xs font-medium text-slate-500 uppercase tracking-wider">Email</label>
-                <input id="contact-email" type="email" required value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="your@email.com" />
+                <input id="contact-email" type="email" required value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="your@email.com" suppressHydrationWarning />
               </div>
             </div>
             <div>
               <label htmlFor="contact-subject" className="mb-2 block text-xs font-medium text-slate-500 uppercase tracking-wider">Subject</label>
-              <input id="contact-subject" type="text" required value={formState.subject} onChange={(e) => setFormState({ ...formState, subject: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="What's this about?" />
+              <input id="contact-subject" type="text" required value={formState.subject} onChange={(e) => setFormState({ ...formState, subject: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="What's this about?" suppressHydrationWarning />
             </div>
             <div>
               <label htmlFor="contact-message" className="mb-2 block text-xs font-medium text-slate-500 uppercase tracking-wider">Message</label>
               <textarea id="contact-message" rows={5} required value={formState.message} onChange={(e) => setFormState({ ...formState, message: e.target.value })} className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all focus:border-indigo-300 focus:bg-white focus:ring-2 focus:ring-indigo-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:placeholder-neutral-500 dark:focus:border-indigo-500 dark:focus:bg-slate-800 dark:focus:ring-indigo-500/20" placeholder="Your message..." />
             </div>
-            <button type="submit" disabled={submitted} className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 dark:shadow-indigo-900/20 transition-all hover:shadow-xl hover:shadow-indigo-300/50 dark:hover:shadow-indigo-800/40 disabled:opacity-70">
+            <button type="submit" disabled={submitted} className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 dark:shadow-indigo-900/20 transition-all hover:shadow-xl hover:shadow-indigo-300/50 dark:hover:shadow-indigo-800/40 disabled:opacity-70" suppressHydrationWarning>
               <span className="relative z-10">{submitted ? "Message Sent! ✓" : "Send Message"}</span>
               <div className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-0" />
             </button>

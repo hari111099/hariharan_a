@@ -70,9 +70,9 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Name */}
-            <div className="mb-2 overflow-hidden">
+            <div className="mb-1 overflow-hidden">
               <motion.h1
-                className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl"
+                className="text-2xl font-semibold tracking-tight text-slate-400 dark:text-neutral-500 sm:text-3xl lg:text-4xl"
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
@@ -89,7 +89,7 @@ export default function HeroSection() {
                 ))}
               </motion.h1>
             </div>
-            <div className="mb-6 overflow-hidden">
+            <div className="mb-4 overflow-hidden">
               <motion.h1
                 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
                 initial="hidden"
@@ -109,12 +109,24 @@ export default function HeroSection() {
               </motion.h1>
             </div>
 
+            {/* Tagline adjusted */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+              className="mb-8"
+            >
+              <p className="text-sm font-medium tracking-wide text-indigo-500/80 dark:text-indigo-400/80">
+                Optimizing enterprise systems • Driving operational excellence
+              </p>
+            </motion.div>
+
             {/* Role */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="mb-3 text-lg font-medium text-slate-600 dark:text-neutral-300 sm:text-xl"
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="mb-3 text-lg font-medium text-slate-500 dark:text-neutral-400 sm:text-xl"
             >
               {personalInfo.role}
               <span className="mx-2 text-indigo-300 dark:text-indigo-700">•</span>

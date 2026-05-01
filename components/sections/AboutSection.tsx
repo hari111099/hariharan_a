@@ -8,7 +8,7 @@ import StatsCounter from "@/components/ui/StatsCounter";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative bg-bg-secondary py-24 sm:py-32 transition-colors duration-300">
+    <section id="about" className="relative bg-bg-secondary py-24 sm:py-32 transition-colors duration-300 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 dark:via-indigo-800 to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-6">

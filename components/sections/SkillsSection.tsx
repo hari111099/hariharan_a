@@ -48,7 +48,7 @@ const categoryConfig: Record<string, { icon: React.ReactNode, color: string, rin
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="relative bg-bg-primary py-24 sm:py-32 transition-colors duration-300">
+    <section id="skills" className="relative bg-bg-primary py-24 sm:py-32 transition-colors duration-300 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 dark:via-indigo-800 to-transparent" />
       
       <div className="relative mx-auto max-w-6xl px-6">

@@ -1,10 +1,18 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import { personalInfo } from "@/lib/data";
 import { fadeUp } from "@/components/animations/variants";
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -38,7 +46,7 @@ export default function Footer() {
           <div className="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-neutral-800 to-transparent" />
 
           <div className="flex flex-col items-center gap-2">
-            <p className="text-xs text-slate-400 dark:text-neutral-500">© {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
+            <p className="text-xs text-slate-400 dark:text-neutral-500">© {mounted ? new Date().getFullYear() : ""} {personalInfo.name}. All rights reserved.</p>
             <button onClick={handleScrollTop} className="group flex items-center gap-1 text-xs text-slate-400 transition-colors hover:text-indigo-500 dark:text-neutral-300 dark:hover:text-indigo-400">
               Back to top
               <svg className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>
